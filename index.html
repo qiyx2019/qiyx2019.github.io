@@ -217,20 +217,20 @@
 
 
   
-    <article id="post-ts" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-ts1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/30/ts/">TS基础篇1：基本类型</a>
+      <a class="article-title" href="/2020/03/30/ts1/">TS基础篇1：基本类型</a>
     </h1>
   
 
         
         
-        <a href="/2020/03/30/ts/" class="archive-article-date">
+        <a href="/2020/03/30/ts1/" class="archive-article-date">
   	<time datetime="2020-03-30T14:32:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-30</time>
 </a>
         
@@ -241,7 +241,7 @@
         <h2 id="1-布尔值boolean"><a href="#1-布尔值boolean" class="headerlink" title="1.布尔值boolean"></a>1.布尔值boolean</h2><p><code>let isDone: boolean = true;</code><br><strong>最基本的数据类型就是简单的false/true</strong></p>
 <h2 id="2-数字number"><a href="#2-数字number" class="headerlink" title="2.数字number"></a>2.数字number</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">var testFunc &#x3D; function() &#123;</span><br><span class="line">    let decLiteral: number &#x3D; 6;</span><br><span class="line">    let hexLiteral: number &#x3D; 0xf00d;</span><br><span class="line">    let binaryLiteral: number &#x3D; 0b1010;</span><br><span class="line">    console.log(decLiteral);    &#x2F;&#x2F; 6</span><br><span class="line">    console.log(hexLiteral);    &#x2F;&#x2F;61453</span><br><span class="line">    console.log(binaryLiteral); &#x2F;&#x2F;10</span><br><span class="line">&#125;</span><br><span class="line">testFunc();</span><br></pre></td></tr></table></figure>
         
-          <a class="article-more-a" href="/2020/03/30/ts/#more">more >></a>
+          <a class="article-more-a" href="/2020/03/30/ts1/#more">more >></a>
         
       
 
@@ -254,7 +254,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2020/03/30/ts/">展开全文 >></a>
+          <a class="article-more-a" href="/2020/03/30/ts1/">展开全文 >></a>
         </p>
       
 
@@ -284,6 +284,546 @@
 
 
   
+    <article id="post-ts2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/03/30/ts2/">TS基础篇2： 数组和元组</a>
+    </h1>
+  
+
+        
+        
+        <a href="/2020/03/30/ts2/" class="archive-article-date">
+  	<time datetime="2020-03-30T14:32:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-30</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h1><h2 id="基础类型"><a href="#基础类型" class="headerlink" title="基础类型"></a>基础类型</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var shuzu &#x3D;function()&#123;</span><br><span class="line">    let crr:number[]&#x3D;[1,2,3,4,5];</span><br><span class="line">    for(var items in crr)&#123;</span><br><span class="line">          console.log(crr[items]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">shuzu();</span><br></pre></td></tr></table></figure>
+<p><strong>数组中的项不允许出现其他类型的数据</strong>  </p>
+<h2 id="数组泛型"><a href="#数组泛型" class="headerlink" title="数组泛型"></a>数组泛型</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var shuzu &#x3D;function()&#123;</span><br><span class="line">    let arr:Array&lt;string&gt;&#x3D;[&#39;123&#39;,&#39;abc&#39;];</span><br><span class="line">    for(var items in arr)&#123;</span><br><span class="line">        console.log(arr[items]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">shuzu();</span><br></pre></td></tr></table></figure>
+        
+          <a class="article-more-a" href="/2020/03/30/ts2/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/03/30/ts2/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-ts3" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/03/30/ts3/">TS基础篇3：变量</a>
+    </h1>
+  
+
+        
+        
+        <a href="/2020/03/30/ts3/" class="archive-article-date">
+  	<time datetime="2020-03-30T14:32:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-30</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="var"><a href="#var" class="headerlink" title="var"></a>var</h2><p><strong>var声明可以在包含它的函数，模块，命名空间或全局作用域内部任何位置被访问</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">function f(shouldInitialize: boolean) &#123;</span><br><span class="line">    if (shouldInitialize) &#123;</span><br><span class="line">        var x &#x3D; 10;</span><br><span class="line">    &#125;</span><br><span class="line">    return x;</span><br><span class="line">&#125;</span><br><span class="line">f(true);    &#x2F;&#x2F; return &#39;10&#39;</span><br><span class="line">f(false);   &#x2F;&#x2F; return &#39;undefined&#39;</span><br></pre></td></tr></table></figure>
+<p><strong>可能引发的错误：多次声明同一个变量并不会报错,可能在代码审查时漏掉，引发无穷的麻烦</strong></p>
+        
+          <a class="article-more-a" href="/2020/03/30/ts3/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/03/30/ts3/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-ts4" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/03/30/ts4/">TS基础篇4：解构与展开</a>
+    </h1>
+  
+
+        
+        
+        <a href="/2020/03/30/ts4/" class="archive-article-date">
+  	<time datetime="2020-03-30T14:32:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-30</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="解构数组"><a href="#解构数组" class="headerlink" title="解构数组"></a>解构数组</h2><ol>
+<li>解构赋值<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">let input &#x3D; [1, 2];</span><br><span class="line">let [first, second] &#x3D; input;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;相当于使用了索引</span><br><span class="line">let first &#x3D; input[0];</span><br><span class="line">let second &#x3D; input[1];</span><br></pre></td></tr></table></figure></li>
+<li>作用于函数参数  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">function f([first, second]: [number, number]) &#123;</span><br><span class="line">    console.log(first);</span><br><span class="line">    console.log(second);</span><br><span class="line">&#125;</span><br><span class="line">f(input);</span><br></pre></td></tr></table></figure>
+        
+          <a class="article-more-a" href="/2020/03/30/ts4/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/03/30/ts4/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-ts5" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/03/30/ts5/">TS基础篇5：简单接口及属性</a>
+    </h1>
+  
+
+        
+        
+        <a href="/2020/03/30/ts5/" class="archive-article-date">
+  	<time datetime="2020-03-30T14:32:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-30</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="简单接口"><a href="#简单接口" class="headerlink" title="简单接口"></a>简单接口</h2><p><strong>在TypeScript里，接口的作用就是为这些类型命名和为你的代码或第三方代码定义契约。</strong><br>Ts:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">interface LabelValue &#123;</span><br><span class="line">  label: string;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function printLabel(labelObj: LabelValue) &#123;</span><br><span class="line">  console.log(labelObj.label);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">let myObj &#x3D; &#123;size: 10, label: &quot;Size 10 Object&quot;&#125;;</span><br><span class="line">printLabel(myObj);</span><br></pre></td></tr></table></figure>
+        
+          <a class="article-more-a" href="/2020/03/30/ts5/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/03/30/ts5/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-ts6" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/03/30/ts6/">TS基础篇6：各种接口类型</a>
+    </h1>
+  
+
+        
+        
+        <a href="/2020/03/30/ts6/" class="archive-article-date">
+  	<time datetime="2020-03-30T14:32:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-30</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="函数类型"><a href="#函数类型" class="headerlink" title="函数类型"></a>函数类型</h2><p><strong>为了使用接口表示函数类型，我们需要给接口定义一个调用签名</strong><br><strong>对于函数类型的类型检查来说，函数的参数名不需要与接口里定义的名字相匹配</strong><br><strong>函数的参数会逐个进行检查， 如果不指定类型，TypeScript的类型系统会推断出参数类型</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">interface SearchFunc &#123;  &#x2F;&#x2F;签名</span><br><span class="line">  (source: string, subString: string): boolean;</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;&#x2F;调用接口</span><br><span class="line">let mySearch: SearchFunc;</span><br><span class="line">mySearch &#x3D; function(source: string, subString: string) &#123;</span><br><span class="line">  let result &#x3D; source.search(subString);</span><br><span class="line">  return result &gt; -1;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">let mySearchs: SearchFunc;</span><br><span class="line">&#x2F;&#x2F;参数名不匹配</span><br><span class="line">mySearchs &#x3D; function(src: string, sub: string): boolean &#123;</span><br><span class="line">  let result &#x3D; src.search(sub);</span><br><span class="line">  return result &gt; -1;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;参数逐个检查</span><br><span class="line">let mySearchb: SearchFunc;</span><br><span class="line">mySearchb &#x3D; function(src, sub) &#123;</span><br><span class="line">    let result &#x3D; src.search(sub);</span><br><span class="line">    return result &gt; -1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        
+          <a class="article-more-a" href="/2020/03/30/ts6/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/03/30/ts6/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-ts7" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/03/30/ts7/">TS基础篇7：类基础</a>
+    </h1>
+  
+
+        
+        
+        <a href="/2020/03/30/ts7/" class="archive-article-date">
+  	<time datetime="2020-03-30T14:32:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-30</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">class Animal &#123;  &#x2F;&#x2F;定义类</span><br><span class="line">private _animalName:string; &#x2F;&#x2F;私有变量</span><br><span class="line"></span><br><span class="line">constructor(name:string) &#123;  &#x2F;&#x2F;构造方法</span><br><span class="line">this._animalName &#x3D; name;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">public sayHello():void &#123;      &#x2F;&#x2F;公共方法</span><br><span class="line">alert(this._animalName + &quot;: Hello&quot;);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;&#x2F;示例类</span><br><span class="line">var tom &#x3D; new Animal(&quot;Tom&quot;);</span><br><span class="line">&#x2F;&#x2F;调用类的方法</span><br><span class="line">tom.sayHello();</span><br></pre></td></tr></table></figure>
+        
+          <a class="article-more-a" href="/2020/03/30/ts7/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/03/30/ts7/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-ts8" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/03/30/ts8/">TS基础篇8：函数基础</a>
+    </h1>
+  
+
+        
+        
+        <a href="/2020/03/30/ts8/" class="archive-article-date">
+  	<time datetime="2020-03-30T14:32:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-30</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="基础语法"><a href="#基础语法" class="headerlink" title="基础语法"></a>基础语法</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">function animal(name:string):string &#123;</span><br><span class="line">    return name;</span><br><span class="line">&#125;    &#x2F;&#x2F;函数</span><br><span class="line"></span><br><span class="line">var animalFun&#x3D; function (name:string):string &#123;</span><br><span class="line">    return name;</span><br><span class="line">&#125; ;  &#x2F;&#x2F;匿名函数</span><br><span class="line"></span><br><span class="line">var animalFun:(name:string)&#x3D;&gt;string</span><br><span class="line">    &#x3D;</span><br><span class="line">    function (name:string):string &#123;</span><br><span class="line">         return name;</span><br><span class="line">    &#125; ; &#x2F;&#x2F;完整函数类型</span><br></pre></td></tr></table></figure>
+        
+          <a class="article-more-a" href="/2020/03/30/ts8/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/03/30/ts8/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-ts9" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/03/30/ts9/">TS基础篇9：Lambads表达式和this作用域指向</a>
+    </h1>
+  
+
+        
+        
+        <a href="/2020/03/30/ts9/" class="archive-article-date">
+  	<time datetime="2020-03-30T14:32:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-30</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="示例代码"><a href="#示例代码" class="headerlink" title="示例代码"></a>示例代码</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">var people&#x3D;&#123;</span><br><span class="line">    name:[&quot;张三&quot;,&quot;李四&quot;,&quot;王五&quot;,&quot;赵六&quot;],</span><br><span class="line">    getName:function()&#123;</span><br><span class="line">        return function()&#123;</span><br><span class="line">            return &#123;</span><br><span class="line">                n:this.name[3],</span><br><span class="line">                m:this</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">var pname &#x3D; people.getName();</span><br><span class="line">console.log(&quot;名字：&quot; + pname().n);</span><br><span class="line">console.log( pname().m);</span><br><span class="line">输出：</span><br><span class="line">名字：undefined</span><br><span class="line">global</span><br></pre></td></tr></table></figure>
+        
+          <a class="article-more-a" href="/2020/03/30/ts9/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/03/30/ts9/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+  
+    <nav id="page-nav">
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
+    </nav>
   
 
 

@@ -6,15 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2020 | 非酋也是球</title>
+  <title>TS基础篇1：基本类型 | 非酋也是球</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="非酋也是球">
-<meta property="og:type" content="website">
-<meta property="og:title" content="非酋也是球">
-<meta property="og:url" content="http://yoursite.com/archives/2020/index.html">
+  <meta name="description" content="1.布尔值booleanlet isDone: boolean &#x3D; true;最基本的数据类型就是简单的false&#x2F;true 2.数字number123456789var testFunc &#x3D; function() &amp;#123;    let decLiteral: number &#x3D; 6;    let hexLiteral: number &#x3D; 0xf00d;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="TS基础篇1：基本类型">
+<meta property="og:url" content="http://yoursite.com/2020/03/30/ts1/index.html">
 <meta property="og:site_name" content="非酋也是球">
-<meta property="og:description" content="非酋也是球">
+<meta property="og:description" content="1.布尔值booleanlet isDone: boolean &#x3D; true;最基本的数据类型就是简单的false&#x2F;true 2.数字number123456789var testFunc &#x3D; function() &amp;#123;    let decLiteral: number &#x3D; 6;    let hexLiteral: number &#x3D; 0xf00d;">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-03-30T14:32:15.000Z">
+<meta property="article:modified_time" content="2020-07-25T06:30:33.100Z">
 <meta property="article:author" content="非酋也是球">
 <meta name="twitter:card" content="summary">
   
@@ -149,295 +151,191 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-ts1" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      TS基础篇1：基本类型
+    </h1>
+  
+
+        
+          <span class="archive-article-date">
+            阅读量 <span id="busuanzi_value_page_pv"></span>
+          </span>
+      
+        
+        <a href="/2020/03/30/ts1/" class="archive-article-date">
+  	<time datetime="2020-03-30T14:32:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-30</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="1-布尔值boolean"><a href="#1-布尔值boolean" class="headerlink" title="1.布尔值boolean"></a>1.布尔值boolean</h2><p><code>let isDone: boolean = true;</code><br><strong>最基本的数据类型就是简单的false/true</strong></p>
+<h2 id="2-数字number"><a href="#2-数字number" class="headerlink" title="2.数字number"></a>2.数字number</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">var testFunc &#x3D; function() &#123;</span><br><span class="line">    let decLiteral: number &#x3D; 6;</span><br><span class="line">    let hexLiteral: number &#x3D; 0xf00d;</span><br><span class="line">    let binaryLiteral: number &#x3D; 0b1010;</span><br><span class="line">    console.log(decLiteral);    &#x2F;&#x2F; 6</span><br><span class="line">    console.log(hexLiteral);    &#x2F;&#x2F;61453</span><br><span class="line">    console.log(binaryLiteral); &#x2F;&#x2F;10</span><br><span class="line">&#125;</span><br><span class="line">testFunc();</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+
+<h2 id="3-字符串string"><a href="#3-字符串string" class="headerlink" title="3.字符串string"></a>3.字符串string</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">vat testFunc &#x3D; function() &#123;</span><br><span class="line">    let str: string &#x3D; &#39;hello&#39;;</span><br><span class="line">    console.log(str);   &#x2F;&#x2F; hello</span><br><span class="line">    let sentence: string &#x3D; &#96;$&#123;str&#125;&#96;;</span><br><span class="line">    console.log(sentence);   &#x2F;&#x2F; hello</span><br><span class="line">&#125;</span><br><span class="line">testFunc();</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="4-数组和元组-Array-and-Tuple"><a href="#4-数组和元组-Array-and-Tuple" class="headerlink" title="4.数组和元组  Array and Tuple"></a>4.数组和元组  Array and Tuple</h2><p> <strong>查看另一篇文章</strong>  </p>
+<h2 id="5-枚举"><a href="#5-枚举" class="headerlink" title="5.枚举"></a>5.枚举</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">var testFunc &#x3D; function() &#123;</span><br><span class="line">    enum Color &#123;Red,Green,Blue&#125;</span><br><span class="line">    let c: Color &#x3D; Color.Green;</span><br><span class="line">    console.log(c)  &#x2F;&#x2F;1</span><br><span class="line">    enum Colors &#123;Red&#x3D;1,Green&#x3D;4,Blue&#125;</span><br><span class="line">    let cc: Color &#x3D; Color.Green;</span><br><span class="line">    console.log(cc);  &#x2F;&#x2F;4</span><br><span class="line">    console.log(Colors[4]);  &#x2F;&#x2F;Green</span><br><span class="line">&#125;</span><br><span class="line">testFunc()</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="6-any类型"><a href="#6-any类型" class="headerlink" title="6. any类型"></a>6. any类型</h2><p><strong>用 any类型标记的变量，类型检查器不对这些值进行检查而是直接让它们通过编译阶段的检查</strong><br><strong>对现有代码改写是十分有用的，与 Object有相似的作用，但Object类型的变量只是允许你给它赋任意值，却不能够在它上面调用任意的方法，即便它真的有这些方法。</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var testFunc &#x3D; function() &#123;</span><br><span class="line">    let num: any &#x3D; 56;</span><br><span class="line">    console.log(num);  &#x2F;&#x2F;56</span><br><span class="line">    num &#x3D; &#39;hello&#39;;</span><br><span class="line">    console.log(num);  &#x2F;&#x2F;hello</span><br><span class="line">&#125;</span><br><span class="line">testFunc();</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="7-void"><a href="#7-void" class="headerlink" title="7.void"></a>7.void</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">funciton testVoid(): void &#123;</span><br><span class="line">    console.log(&#39;无返回值&#39;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="8-undefined和null"><a href="#8-undefined和null" class="headerlink" title="8. undefined和null"></a>8. undefined和null</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let u: undefined &#x3D; undefined;</span><br><span class="line">let n: null &#x3D; null;</span><br></pre></td></tr></table></figure>
+<p><strong>默认情况下null和undefined是所有类型的子类型</strong><br><strong>注意：strictNullChecks 参数用于新的严格空检查模式。</strong><br><strong>在严格空检查模式下，，null 和 undefined 值都 不 属于任何一个类型，它们只能赋值给自己这种类型或者 any (有一个例外，undefined 也可以赋值给 void)。</strong></p>
+<h2 id="9-never类型"><a href="#9-never类型" class="headerlink" title="9. never类型"></a>9. never类型</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">function err(message: string): never &#123;</span><br><span class="line">    throw new Error(message);</span><br><span class="line">&#125;</span><br><span class="line">function infiniteLoop(): never &#123;</span><br><span class="line">    while(true) &#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>never类型表示的是那些永不存在的值的类型</strong><br><strong>never类型是任何类型的子类型，也可以赋值给任何类型；然而，没有类型是never的子类型或可以赋值给never类型（除了never本身之外）。 即使 any也不可以赋值给never。</strong></p>
+<h2 id="10-断言类型"><a href="#10-断言类型" class="headerlink" title="10. 断言类型"></a>10. 断言类型</h2><p><strong>类型断言：好比其它语言里的类型转换，但是不进行特殊的数据检查和解构。 它没有运行时的影响，只是在编译阶段起作用。 TypeScript会假设你，程序员，已经进行了必须的检查。</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">let someValue: any &#x3D; &#39;this is str&#39;;</span><br><span class="line">let strLength: number &#x3D; (&lt;string&gt;someValue).length;</span><br><span class="line">等价于</span><br><span class="line">let strLength: number &#x3D; (someValue as string).length;</span><br></pre></td></tr></table></figure>
+<p><strong>当你在TypeScript里使用JSX时，只有 as语法断言是被允许的。</strong></p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/07/24/firstCommit/" class="archive-article-date">
-  	<time datetime="2020-07-24T15:27:51.611Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-24</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/07/24/firstCommit/">记一次手残日记</a>
-    </h1>
-  
+      
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2020/03/30/ts1/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/03/30/ts1/" class="archive-article-date">
-  	<time datetime="2020-03-30T14:32:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-30</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2020/07/24/firstCommit/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          记一次手残日记
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/03/30/ts2/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">TS基础篇2： 数组和元组</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/30/ts1/">TS基础篇1：基本类型</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/03/30/ts2/" class="archive-article-date">
-  	<time datetime="2020-03-30T14:32:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-30</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/30/ts2/">TS基础篇2： 数组和元组</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/03/30/ts3/" class="archive-article-date">
-  	<time datetime="2020-03-30T14:32:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-30</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/30/ts3/">TS基础篇3：变量</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/03/30/ts4/" class="archive-article-date">
-  	<time datetime="2020-03-30T14:32:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-30</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/30/ts4/">TS基础篇4：解构与展开</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/03/30/ts5/" class="archive-article-date">
-  	<time datetime="2020-03-30T14:32:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-30</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/30/ts5/">TS基础篇5：简单接口及属性</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/03/30/ts6/" class="archive-article-date">
-  	<time datetime="2020-03-30T14:32:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-30</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/30/ts6/">TS基础篇6：各种接口类型</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/03/30/ts7/" class="archive-article-date">
-  	<time datetime="2020-03-30T14:32:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-30</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/30/ts7/">TS基础篇7：类基础</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/03/30/ts8/" class="archive-article-date">
-  	<time datetime="2020-03-30T14:32:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-30</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/30/ts8/">TS基础篇8：函数基础</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/03/30/ts9/" class="archive-article-date">
-  	<time datetime="2020-03-30T14:32:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-30</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/30/ts9/">TS基础篇9：Lambads表达式和this作用域指向</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/2020/page/2/">2</a><a class="extend next" rel="next" href="/archives/2020/page/2/">Next &amp;raquo;</a>
-    </nav>
   
 
 
@@ -474,8 +372,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
