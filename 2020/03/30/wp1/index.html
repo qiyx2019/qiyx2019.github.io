@@ -6,15 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | 非酋也是球</title>
+  <title>Webpack轻松入门（一）——基本流程 | 非酋也是球</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="非酋也是球">
-<meta property="og:type" content="website">
-<meta property="og:title" content="非酋也是球">
-<meta property="og:url" content="http://yoursite.com/archives/page/2/index.html">
+  <meta name="description" content="Webpack简介 核心① 入口(entry) ② 输出(output) ③ loader ④ 插件(plugins) 优势① 模块化开发（import，require） ② 预处理（Less，Sass，ES6，TypeScript……） ③ 主流框架脚手架支持（Vue，React，Angular） ④ 庞大的社区（资源丰富，降低学习成本） 初学者误区① 要学会node.js ② 只能用于简单的代">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Webpack轻松入门（一）——基本流程">
+<meta property="og:url" content="http://yoursite.com/2020/03/30/wp1/index.html">
 <meta property="og:site_name" content="非酋也是球">
-<meta property="og:description" content="非酋也是球">
+<meta property="og:description" content="Webpack简介 核心① 入口(entry) ② 输出(output) ③ loader ④ 插件(plugins) 优势① 模块化开发（import，require） ② 预处理（Less，Sass，ES6，TypeScript……） ③ 主流框架脚手架支持（Vue，React，Angular） ④ 庞大的社区（资源丰富，降低学习成本） 初学者误区① 要学会node.js ② 只能用于简单的代">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-03-30T14:32:15.000Z">
+<meta property="article:modified_time" content="2020-07-28T15:08:26.091Z">
 <meta property="article:author" content="非酋也是球">
 <meta name="twitter:card" content="summary">
   
@@ -149,133 +151,188 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-wp1" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Webpack轻松入门（一）——基本流程
+    </h1>
+  
+
+        
+          <span class="archive-article-date">
+            阅读量 <span id="busuanzi_value_page_pv"></span>
+          </span>
+      
+        
+        <a href="/2020/03/30/wp1/" class="archive-article-date">
+  	<time datetime="2020-03-30T14:32:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-30</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Webpack简介"><a href="#Webpack简介" class="headerlink" title="Webpack简介"></a>Webpack简介</h2><ol>
+<li><strong>核心</strong><br><code>① 入口(entry)
+② 输出(output)
+③ loader
+④ 插件(plugins)</code></li>
+<li><strong>优势</strong><br><code>① 模块化开发（import，require）
+② 预处理（Less，Sass，ES6，TypeScript……）
+③ 主流框架脚手架支持（Vue，React，Angular）
+④ 庞大的社区（资源丰富，降低学习成本）</code></li>
+<li><strong>初学者误区</strong><br><code>① 要学会node.js
+② 只能用于简单的代码压缩合并
+③ 上线时要将整个项目文件上传服务器</code><br>以上几条都是初学者比较容易产生的误区，而事实上……<br><code>① 我们确实需要安装node.js，但基本只是需要它提供的环境及npm而已，你不一定要掌握node.js语法
+② Webpack非常强大，不仅仅可以实现代码的压缩合并，还能进行一些预编译处理以及模块化开发等
+③ 我们只需要将Webpack打包出来的文件目录上传到服务器即可，而不是上传整个项目文件</code><h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2></li>
+<li><strong>安装node.js</strong><br>Webpack本身是基于node.js环境的，所以我们需要先安装node.js，具体方法可以看这里→Node.js——通往全栈之路。</li>
+<li><strong>创建目录结构</strong></li>
+</ol>
+<p><em>① 创建目录结构</em><br>在新创建的项目文件夹下，创建两个基础文件夹：src和dist，其中src是我们开发时源代码所放置的文件夹，dist是我们使用Webpack打包后代码输出的目标文件夹，也就是说最终我们上传服务器的代码都是从dist文件夹下获取。<br><em>新建一个package.json文件</em><br>package.json文件是在node.js环境下开发项目必须要使用到的文件，该文件主要用于配置项目入口、脚本和项目所需安装的依赖等等。我们可以自己手动创建，也可以通过命令行自动创建它。命令行创建很简单，直接在控制台终端输入npm init，然后一直回车即可轻松创建一个最基础的package.json文件。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;name&quot;: &quot;webpackdemo&quot;,</span><br><span class="line">  &quot;version&quot;: &quot;1.0.0&quot;,</span><br><span class="line">  &quot;description&quot;: &quot;&quot;,</span><br><span class="line">  &quot;main&quot;: &quot;index.js&quot;,</span><br><span class="line">  &quot;scripts&quot;: &#123;</span><br><span class="line">    &quot;test&quot;: &quot;echo \&quot;Error: no test specified\&quot; &amp;&amp; exit 1&quot;</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;author&quot;: &quot;&quot;,</span><br><span class="line">  &quot;license&quot;: &quot;ISC&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li><strong>安装Webpack</strong><br>依次输入命令行npm i -D webpack和npm i -D webpack-cli回车进行本地安装，其中i是install的缩写，-D是–save-dev的缩写，也就是说这两个命令行也可以写成npm install –save-dev webpack和npm install –save-dev webpack-cli。<br>package.json文件如下：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;name&quot;: &quot;webpackdemo&quot;,</span><br><span class="line">  &quot;version&quot;: &quot;1.0.0&quot;,</span><br><span class="line">  &quot;description&quot;: &quot;&quot;,</span><br><span class="line">  &quot;main&quot;: &quot;index.js&quot;,</span><br><span class="line">  &quot;scripts&quot;: &#123;</span><br><span class="line">    &quot;test&quot;: &quot;echo \&quot;Error: no test specified\&quot; &amp;&amp; exit 1&quot;</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;author&quot;: &quot;&quot;,</span><br><span class="line">  &quot;license&quot;: &quot;ISC&quot;,</span><br><span class="line">  &quot;devDependencies&quot;: &#123;</span><br><span class="line">    &quot;webpack&quot;: &quot;^4.5.0&quot;,</span><br><span class="line">    &quot;webpack-cli&quot;: &quot;^2.0.14&quot;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><em>新建webpack.config.js文件</em><br>该文件是Webpack的配置文件，也是项目运行的入口文件，基础写法如下：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">module.exports &#x3D; &#123;</span><br><span class="line">    entry: &#39;.&#x2F;src&#x2F;scripts&#x2F;index.js&#39;,    &#x2F;&#x2F; 需要被打包的js文件路径及文件名</span><br><span class="line">    output: &#123;</span><br><span class="line">        path: __dirname + &#39;&#x2F;dist&#39;,    &#x2F;&#x2F; 打包输出的目标文件的绝对路径（其中__dirname为当前目录的绝对路径）</span><br><span class="line">        filename: &#39;scripts&#x2F;index.js&#39;   &#x2F;&#x2F; 打包输出的js文件名及相对于dist目录所在路径</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="开始打包"><a href="#开始打包" class="headerlink" title="开始打包"></a>开始打包</h2></li>
+<li><strong>新建需要被打包的js文件</strong><br>输入命令行：npx webpack，回车。<br>由于我们已经在webpack.config.js文件配置了打包的相关路径及文件名，所以最终打包后我们就可以在dist目录下看到我们想要的输出结果</li>
+<li><strong>使用打包后的js代码</strong><br>现在我们已经获得打包后的代码，接下来我们应该使用它，测试它是否能正常运行。<br>我们可以在dist目录下手动创建一个HTML文件，并引入这个已经打包成功的js文件<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head lang&#x3D;&quot;en&quot;&gt;</span><br><span class="line">    &lt;meta charset&#x3D;&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;&lt;&#x2F;title&gt;</span><br><span class="line">&lt;&#x2F;head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;script src&#x3D;&quot;scripts&#x2F;index.js&quot;&gt;&lt;&#x2F;script&gt;</span><br><span class="line">&lt;&#x2F;body&gt;</span><br><span class="line">&lt;&#x2F;html&gt;</span><br></pre></td></tr></table></figure>
+打开index.html页面后，我们发现浏览器弹出“Hello Webpack!”提示框，说明代码确实已经打包成功。</li>
+</ol>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/03/30/ts8/" class="archive-article-date">
-  	<time datetime="2020-03-30T14:32:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-30</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/30/ts8/">TS基础篇8：函数基础</a>
-    </h1>
-  
+      
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2020/03/30/wp1/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/03/30/ts9/" class="archive-article-date">
-  	<time datetime="2020-03-30T14:32:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-30</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2020/03/30/jiqiao/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          vue -- 7 个 有用的 Vue 开发技巧
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/30/ts9/">TS基础篇9：Lambads表达式和this作用域指向</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/03/30/jiqiao/" class="archive-article-date">
-  	<time datetime="2020-03-30T14:32:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-30</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/30/jiqiao/">vue -- 7 个 有用的 Vue 开发技巧</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/03/30/wp1/" class="archive-article-date">
-  	<time datetime="2020-03-30T14:32:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-30</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/30/wp1/">Webpack轻松入门（一）——基本流程</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/">&amp;laquo; Prev</a><a class="page-number" href="/archives/">1</a><span class="page-number current">2</span>
-    </nav>
   
 
 
@@ -312,8 +369,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
