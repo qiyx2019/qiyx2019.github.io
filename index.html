@@ -284,6 +284,70 @@
 
 
   
+    <article id="post-ts10" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/03/30/ts10/">TS基础篇10：模块</a>
+    </h1>
+  
+
+        
+        
+        <a href="/2020/03/30/ts10/" class="archive-article-date">
+  	<time datetime="2020-03-30T14:32:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-30</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="基础语法"><a href="#基础语法" class="headerlink" title="基础语法"></a>基础语法</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">module MyDemo &#123;</span><br><span class="line">    export interface IDemo &#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    export class Demo implements IDemo &#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="包别名"><a href="#包别名" class="headerlink" title="包别名"></a>包别名</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">module Shapes &#123;</span><br><span class="line">    export module Polygons &#123;</span><br><span class="line">        export class Triangle &#123; &#125;</span><br><span class="line">        export class Square &#123; &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">import polygons &#x3D; Shapes.Polygons;</span><br><span class="line">var sq &#x3D; new polygons.Square(); </span><br><span class="line">&#x2F;&#x2F; 类似于 &#39;new Shapes.Polygons.Square()&#39;</span><br></pre></td></tr></table></figure>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/03/30/ts10/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-ts2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -622,6 +686,74 @@
 
 
   
+    <article id="post-xingneng" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/03/30/xingneng/">vuejs项目性能优化总结</a>
+    </h1>
+  
+
+        
+        
+        <a href="/2020/03/30/xingneng/" class="archive-article-date">
+  	<time datetime="2020-03-30T14:32:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-30</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>在使用elementUI构建公司管理系统时，发现首屏加载时间长，加载的网络资源比较多，对系统的体验性会差一点，而且用webpack打包的vuejs的vendor包会比较大。所以通过搜集网上所有对于vuejs项目的性能优化，做了有关3方面的优化建议，主要包括：上线代码包打包、源码编写优化、用户体验优化。(下面的优化建议只在vue-cli脚手架下做过测试，详情请参考)</strong></p>
+<h2 id="代码包优化"><a href="#代码包优化" class="headerlink" title="代码包优化"></a>代码包优化</h2><ol>
+<li><em>屏蔽sourceMap</em><br>待下项目开发完成。进行打包源码上线环节，需要对项目开发环节的开发提示信息以及错误信息进行屏蔽，一方面可以减少上线代码包的大小；另一方面提高系统的安全性。在vuejs项目的config目录下有三个文件dev.env.js(开发环境配置文件)、prod.env.js(上线配置文件)、index.js(通用配置文件)。vue-cli脚手架在上线配置文件会自动设置允许sourceMap打包，所以在上线前可以屏蔽sourceMap。如下所示，index.js的配置如下,通用配置文件分别对开发环境和上线环境做了打包配置分类，在build对象中的配置信息中，productionSourceMap修改成false
+        
+          <a class="article-more-a" href="/2020/03/30/xingneng/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/03/30/xingneng/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-ts7" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -659,138 +791,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2020/03/30/ts7/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-ts8" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/30/ts8/">TS基础篇8：函数基础</a>
-    </h1>
-  
-
-        
-        
-        <a href="/2020/03/30/ts8/" class="archive-article-date">
-  	<time datetime="2020-03-30T14:32:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-30</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="基础语法"><a href="#基础语法" class="headerlink" title="基础语法"></a>基础语法</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">function animal(name:string):string &#123;</span><br><span class="line">    return name;</span><br><span class="line">&#125;    &#x2F;&#x2F;函数</span><br><span class="line"></span><br><span class="line">var animalFun&#x3D; function (name:string):string &#123;</span><br><span class="line">    return name;</span><br><span class="line">&#125; ;  &#x2F;&#x2F;匿名函数</span><br><span class="line"></span><br><span class="line">var animalFun:(name:string)&#x3D;&gt;string</span><br><span class="line">    &#x3D;</span><br><span class="line">    function (name:string):string &#123;</span><br><span class="line">         return name;</span><br><span class="line">    &#125; ; &#x2F;&#x2F;完整函数类型</span><br></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2020/03/30/ts8/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/03/30/ts8/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-ts9" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/30/ts9/">TS基础篇9：Lambads表达式和this作用域指向</a>
-    </h1>
-  
-
-        
-        
-        <a href="/2020/03/30/ts9/" class="archive-article-date">
-  	<time datetime="2020-03-30T14:32:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-30</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="示例代码"><a href="#示例代码" class="headerlink" title="示例代码"></a>示例代码</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">var people&#x3D;&#123;</span><br><span class="line">    name:[&quot;张三&quot;,&quot;李四&quot;,&quot;王五&quot;,&quot;赵六&quot;],</span><br><span class="line">    getName:function()&#123;</span><br><span class="line">        return function()&#123;</span><br><span class="line">            return &#123;</span><br><span class="line">                n:this.name[3],</span><br><span class="line">                m:this</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">var pname &#x3D; people.getName();</span><br><span class="line">console.log(&quot;名字：&quot; + pname().n);</span><br><span class="line">console.log( pname().m);</span><br><span class="line">输出：</span><br><span class="line">名字：undefined</span><br><span class="line">global</span><br></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2020/03/30/ts9/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/03/30/ts9/">展开全文 >></a>
         </p>
       
 
